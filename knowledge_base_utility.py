@@ -5,9 +5,7 @@ import os
 import requests
 import datetime
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-if not GROQ_API_KEY:
-    raise ValueError("GROQ_API_KEY is not set")
+
 
 
 class GetContext():
@@ -33,6 +31,10 @@ class LLM:
 
     def __init__(self, context:GetContext):
         self.__context = context
+        GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+        if not GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY is not set")
+        self.__api_key = GROQ_API_KEY
 
     def build_prompt(self, user_input, formatted_chat_history=''):
         today_date = str(datetime.datetime.now().strftime('%B %d, %Y'))
@@ -56,7 +58,7 @@ Use the following context to answer queries:
         url = "https://api.groq.com/openai/v1/chat/completions"
         messages = self.build_prompt(user_input, formatted_chat_history)
         headers = {
-            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Authorization": f"Bearer {self.__api_key}",
             "Content-Type": "application/json"
         }       
         payload = {
