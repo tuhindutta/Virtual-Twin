@@ -12,13 +12,33 @@ In an era where personalized AI is transforming how we connect and consume infor
 - **Streamlit UI**: A sleek, interactive
 
 ## ⚙️ Technology Stack
-| Component           | Details                                  |
-| ------------------- | ---------------------------------------- |
-| Embedding Model     | `all-mpnet-base-v2` Sentence Transformer |
-| Vector Database     | FAISS (Facebook AI Similarity Search)    |
-| Language Model      | LLaMA 3.3 70B Versatile                  |
-| Frontend UI         | Streamlit App                            |
-| Deployment Platform | Hugging Face Spaces                      |
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>Embedding Model</td>
+    <td>all-mpnet-base-v2 Sentence Transformer</td>
+  </tr>
+  <tr>
+    <td>Vector Database</td>
+    <td>FAISS (Facebook AI Similarity Search)</td>
+  </tr>
+  <tr>
+    <td>Language Model</td>
+    <td>LLaMA 3.3 70B Versatile</td>
+  </tr>
+  <tr>
+    <td>Frontend UI</td>
+    <td>Streamlit App</td>
+  </tr>
+  <tr>
+    <td>Deployment Platform</td>
+    <td>Hugging Face Spaces</td>
+  </tr>
+</table>
+
 
 ## 📤 Key Deployment Highlights
 This project is deployed on Hugging Face Spaces using a custom Docker container, enabling complete control over dependencies, performance optimization, and caching.
